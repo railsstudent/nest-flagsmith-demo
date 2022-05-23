@@ -1,10 +1,10 @@
 import { Module, OnModuleInit } from '@nestjs/common';
-import { ApiConfigService } from './services';
+import { ApiConfigService, FeatureToggleService } from './services';
 import * as flagsmith from 'flagsmith-nodejs';
 
 @Module({
-  providers: [ApiConfigService],
-  exports: [ApiConfigService],
+  providers: [ApiConfigService, FeatureToggleService],
+  exports: [ApiConfigService, FeatureToggleService],
 })
 export class CoreModule implements OnModuleInit {
   constructor(private configService: ApiConfigService) {}
