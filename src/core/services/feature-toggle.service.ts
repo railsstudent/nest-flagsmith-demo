@@ -7,7 +7,10 @@ export class FeatureToggleService {
     return flagsmith.hasFeature(key);
   }
 
-  getValue(key: string): Promise<string | number | boolean> {
+  getValue(key: string, userId?: string): Promise<string | number | boolean> {
+    if (userId) {
+      return flagsmith.getValue(key, userId);
+    }
     return flagsmith.getValue(key);
   }
 
