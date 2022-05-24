@@ -1,6 +1,6 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": ["nestjs", "dtos", "commitlint"],
+  "words": ["nestjs", "dtos", "commitlint", "flagsmith", "diginex"],
   "flagWords": ["hte"]
 }

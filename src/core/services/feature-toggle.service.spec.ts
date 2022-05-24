@@ -1,18 +1,18 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { FeatureToggleService } from './feature-toggle.service';
+import { Test, TestingModule } from '@nestjs/testing'
+import { FeatureToggleService } from './feature-toggle.service'
 
 describe('FeatureToggleService', () => {
-  let service: FeatureToggleService;
+  let service: FeatureToggleService
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [FeatureToggleService],
-    }).compile();
+    }).compile()
 
-    service = module.get<FeatureToggleService>(FeatureToggleService);
-  });
+    service = module.get<FeatureToggleService>(FeatureToggleService)
+  })
 
   it('should be defined', () => {
-    expect(service).toBeDefined();
-  });
-});
+    expect(service).toBeDefined()
+  })
+})

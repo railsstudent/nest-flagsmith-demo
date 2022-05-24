@@ -1,1 +1,1 @@
-export * from './feature-toggle.interface';
+export * from './feature-toggle.interface'

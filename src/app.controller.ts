@@ -1,6 +1,6 @@
-import { Controller, Get, Param, ParseBoolPipe, Query } from '@nestjs/common';
-import { AppService } from './app.service';
-import flagsmith from 'flagsmith-nodejs';
+import { Controller, Get, Param, ParseBoolPipe, Query } from '@nestjs/common'
+import flagsmith from 'flagsmith-nodejs'
+import { AppService } from './app.service'
 
 @Controller()
 export class AppController {
@@ -8,30 +8,27 @@ export class AppController {
 
   @Get()
   getHello(): string {
-    return this.appService.getHello();
+    return this.appService.getHello()
   }
 
   @Get('has-feature')
   hasFeature(@Query('key') key: string): Promise<boolean> {
-    return this.appService.hasFeature(key);
+    return this.appService.hasFeature(key)
   }
 
   @Get('values')
   getValue(@Query('key') key: string): Promise<boolean | string | number> {
-    return this.appService.getValue(key);
+    return this.appService.getValue(key)
   }
 
   @Get('flags')
   getFlags(): Promise<flagsmith.IFlags> {
-    return this.appService.getFlags();
+    return this.appService.getFlags()
   }
 
   @Get(':id/values')
-  getValueWithIdentity(
-    @Param('id') userId: string,
-    @Query('key') key: string,
-  ): Promise<boolean | string | number> {
-    return this.appService.getValue(key, userId);
+  getValueWithIdentity(@Param('id') userId: string, @Query('key') key: string): Promise<boolean | string | number> {
+    return this.appService.getValue(key, userId)
   }
 
   @Get(':id/i18n')
@@ -39,6 +36,6 @@ export class AppController {
     @Param('id') userId: string,
     @Query('isDiginexUser', ParseBoolPipe) isDiginexUser: boolean,
   ): Promise<boolean | string | number> {
-    return this.appService.getI18nFlag(userId, isDiginexUser);
+    return this.appService.getI18nFlag(userId, isDiginexUser)
   }
 }

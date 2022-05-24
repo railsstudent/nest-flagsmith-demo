@@ -1,6 +1,6 @@
-import { Module, OnModuleInit } from '@nestjs/common';
-import { ApiConfigService, FeatureToggleService } from './services';
-import * as flagsmith from 'flagsmith-nodejs';
+import { Module, OnModuleInit } from '@nestjs/common'
+import * as flagsmith from 'flagsmith-nodejs'
+import { ApiConfigService, FeatureToggleService } from './services'
 
 @Module({
   providers: [ApiConfigService, FeatureToggleService],
@@ -13,6 +13,6 @@ export class CoreModule implements OnModuleInit {
     flagsmith.init({
       environmentID: this.configService.featureToggleApiKey,
       api: this.configService.featureToggleUrl,
-    });
+    })
   }
 }
